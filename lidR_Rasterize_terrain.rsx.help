@@ -1,5 +1,1 @@
-{"ALG_CREATOR": "Jean-Romain Roussel, jean-romain.roussel.1(at)ulaval.ca",
- "ALG_DESC": "The script rasterizes a terrain from LAS file using {lidR} package.",
-  "Input": "A LAS file", 
-  "Output": "An output TIF raster file",
-  "ALG_HELP_CREATOR": "Grzegorz Sapijaszko, grzegorz(at)sapijaszko.net"}
+{"Input": "A directory with LAS files", "ALG_DESC": "The script rasterizes a terrain using LAScatalog. The alghoritm is based on https://cran.r-project.org/web/packages/lidR/vignettes/lidR-LAScatalog-engine.html and https://r-lidar.github.io/lidRbook/index.html",  "CRS": "Optional CRS.", "Chunk size": "Size of the chunk which has to be proceeded, default 0 (process a file at once).", "Chunk buffer": "Buffer around chunk, default 30 m", "Output": "An output TIF raster file", "ALG_CREATOR": "Jean-Romain Roussel, jean-romain.roussel.1(at)ulaval.ca", "ALG_HELP_CREATOR": "Grzegorz Sapijaszko, grzegorz(at)sapijaszko.net"}

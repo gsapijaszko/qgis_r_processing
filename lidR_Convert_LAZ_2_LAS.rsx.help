@@ -1,0 +1,5 @@
+{"ALG_CREATOR": "Grzegorz Sapijaszko, grzegorz(at)sapijaszko.net",
+ "ALG_DESC": "The script uses {lidR} package to convert bunch of *.LAZ files to uncompressed *.LAS, with optional index files. You can optionally add any filter string, '-keep_class 2 9' is default one",
+  "Input": "An input directory with *.laz files", 
+  "Output": "An output directory, where .las files are written",
+  "ALG_HELP_CREATOR": "Grzegorz Sapijaszko, grzegorz(at)sapijaszko.net"}
