@@ -1,4 +1,5 @@
 ##lidR=group
+##Rasterize terrain (LAScatalog)=name
 ##LAS_directory=folder
 ##Resolution=number 1
 ##CRS=crs 2180

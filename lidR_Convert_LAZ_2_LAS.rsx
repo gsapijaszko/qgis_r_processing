@@ -1,4 +1,5 @@
 ##lidR=group
+##Convert LAZ to LAS (directory)=name
 ##LAZ_directory=folder
 ##Filter=optional string "-keep_class 2 9"
 ##Create_index=selection TRUE;FALSE TRUE
