@@ -1,0 +1,5 @@
+{"ALG_CREATOR": "Jean-Romain Roussel, jean-romain.roussel.1(at)ulaval.ca",
+ "ALG_DESC": "The script rasterizes a terrain from LAS file using {lidR} package.",
+  "Input": "A LAS file", 
+  "Output": "An output TIF raster file",
+  "ALG_HELP_CREATOR": "Grzegorz Sapijaszko, grzegorz(at)sapijaszko.net"}
