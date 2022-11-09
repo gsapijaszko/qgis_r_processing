@@ -7,7 +7,7 @@
 ##Chunk_buffer=number 30
 ##Output_directory=folder
 ##Output=output raster
-
+library(lidR)
 ctg <- lidR::readLAScatalog(LAS_directory)
 lidR::crs(ctg) <- CRS
 lidR::plot(ctg)
@@ -23,4 +23,4 @@ if(Chunk_size == 0) {
 
 lidR::opt_chunk_buffer(ctg) <- Chunk_buffer
 
-Output = lidR::rasterize_terrain(ctg, Resolution, algorithm = lidR::tin(), pkg = "raster")
+Output = lidR::rasterize_terrain(ctg, Resolution, algorithm = tin(), pkg = "raster")
