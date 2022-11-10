@@ -1,0 +1,5 @@
+{"ALG_CREATOR": "Tomasz Nycz, tomasz(at)nycz.beskidy.pl",
+ "ALG_DESC": "The script uses {lidR} package to detect tree tops with Local Maxima Filter (variable window size).",
+  "Input": "An input directory with *.laz files", 
+  "Output": "An output vector file",
+  "ALG_HELP_CREATOR": "Tomasz Nycz, tomasz(at)nycz.beskidy.pl"}
