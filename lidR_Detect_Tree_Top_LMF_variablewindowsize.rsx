@@ -1,4 +1,4 @@
-##lideR=group
+##lidR=group
 ##Detect tree top with LMF (variable window size)=name
 ##LAS_file=file
 ##Output=output vector
