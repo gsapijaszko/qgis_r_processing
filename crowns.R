@@ -76,5 +76,25 @@ ctg_segmented <- segment_trees(ctg_norm, algo) # segment point cloud
 # dotąd działa, niżej się wywala z błędem -----------------------------------------------------
 
 # Obrysy ----
-crowns <- crown_metrics(ctg_segmented, func = .stdtreemetrics, geom = "convex")
+opt_output_files(ctg_segmented) <- ""
+lasplot <- clip_circle(ctg_segmented, 386200, 408500, 1000)
+
+crowns <- crown_metrics(lasplot, func = .stdtreemetrics, geom = "convex")
+crowns <- crowns |>
+  subset(sf::st_is_valid(crowns))
+
+plot(sf::st_geometry(crowns), col = pastel.colors(250), axes = T)
+plot(ctg, add = T)
+
 Output = crowns
+
+# glupoty -------------------------------------------------------------------------------------
+
+opt_chunk_buffer(ctg) <- -12.5
+opt_chunk_size(ctg) <- 0 # no change to chunk size
+opt_output_files(ctg) <- paste0(Output_directory, "/{ORIGINALFILENAME}_buffered") # name outputs with original name and "_buffered"
+buffered <- catalog_retile(ctg) # apply buffer
+plot(buffered) # some plotting
+
+l <- readLAS("data/norm/74960_1080723_M-33-23-B-c-4-2-1_segmented.las")
+header(l)
