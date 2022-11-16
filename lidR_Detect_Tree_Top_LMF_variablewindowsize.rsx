@@ -1,6 +1,7 @@
 ##lidR=group
 ##Detect tree top with LMF (variable window size)=name
 ##LAS_file=file
+##CRS=crs 1
 ##Output=output vector
 library(lidR)
 library(stringr)
@@ -13,6 +14,7 @@ f <- function(x) {
 }
 # Wczytanie danych ----
 las = lidR::readLAS(LAS_file)
+lidR::crs(las) <- CRS
 nlas <- normalize_height(las, knnidw())
 ttops <- locate_trees(nlas, lmf(f))
 # Output ----
