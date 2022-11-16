@@ -58,8 +58,10 @@ chm_p2r_05 <- rasterize_canopy(ctg_norm, 0.5, p2r(subcircle = 0.2), pkg = "terra
 kernel <- matrix(1,3,3)
 chm_p2r_05_smoothed <- terra::focal(chm_p2r_05, w = kernel, fun = median, na.rm = TRUE)
 # Wierzchołki ----
+
 ctg_norm@output_options$drivers$sf$param$delete_dsn <- TRUE
 ctg_norm@output_options$drivers$sf$extension <- ".gpkg"
+
 ttops <- locate_trees(ctg_norm, lmf(f), uniqueness = "bitmerge")
 if(is.character(ttops)) {
   ttops <- lapply(ttops, sf::read_sf)
@@ -79,13 +81,16 @@ ctg_segmented <- segment_trees(ctg_norm, algo) # segment point cloud
 opt_output_files(ctg_segmented) <- ""
 lasplot <- clip_circle(ctg_segmented, 386200, 408500, 1000)
 
-crowns <- crown_metrics(lasplot, func = .stdtreemetrics, geom = "convex")
+crowns <- crown_metrics(lasplot, func = .stdtreemetrics, geom = "concave", concaveman = c(3, 5))
 crowns <- crowns |>
   subset(sf::st_is_valid(crowns))
 
+
+
+
 plot(sf::st_geometry(crowns), col = pastel.colors(250), axes = T)
 plot(ctg, add = T)
-
+sf::st_write(crowns, "data/crowns.gpkg", delete_dsn = TRUE)
 Output = crowns
 
 # glupoty -------------------------------------------------------------------------------------
@@ -96,5 +101,10 @@ opt_output_files(ctg) <- paste0(Output_directory, "/{ORIGINALFILENAME}_buffered"
 buffered <- catalog_retile(ctg) # apply buffer
 plot(buffered) # some plotting
 
-l <- readLAS("data/norm/74960_1080723_M-33-23-B-c-4-2-1_segmented.las")
-header(l)
+
+lasplot@data |>
+  dplyr::group_by(treeID) |>
+  dplyr::count() |>
+  dplyr::ungroup() |>
+  dplyr::filter(n < 4)
+  tail()
