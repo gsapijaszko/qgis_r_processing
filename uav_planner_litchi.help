@@ -4,5 +4,5 @@
   "AGL": "Average Ground Level of Flight",
   "Azimuth": "Angle of Flight lines. Default -1 calculates BBox longest line angle",
   "Output": "An output table (CSV)",
-  "Other settings": "Maximal waypoints distance defaluts to 400m, do not change to >2km. Max flight time set to 16 min - longer flights will be cut to parts." 
+  "Other settings": "Maximal waypoints distance defaluts to 400m, do not change to >2km. Max flight time set to 16 min - longer flights will be cut to parts.", 
   "ALG_HELP_CREATOR": "Tomasz Nycz, tomasz(at)nycz.beskidy.pl"}
