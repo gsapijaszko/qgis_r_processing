@@ -13,7 +13,8 @@
 
 # list.of.packages <- c("flightplanning")
 # new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-# if(length(new.packages)) devtools::install_github("caiohamamura/flightplanning-R", dependencies=TRUE,  method = "wget", extra = "-c --progress=bar:force")
+# if(length(new.packages)) 
+# devtools::install_github("gsapijaszko/flightplanning-R", force = TRUE, dependencies=TRUE,  method = "wget", extra = "-c --progress=bar:force")
 library(flightplanning)
 params = flightplanning::flight.parameters(height=AGL, flight.speed.kmh=24,
                                            side.overlap = 0.8, front.overlap = 0.8)
@@ -25,7 +26,7 @@ roi = sf::st_read(ROI_shape) |>
 
 class(roi)
 roi
-wynik = tempfile(fileext=".csv")
+wynik = "/home/tomasz/gis/dev/lot999.csv"
 params
 # Create the csv plan 
 flightplanning::litchi.plan(roi,
