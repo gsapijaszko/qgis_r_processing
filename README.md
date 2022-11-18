@@ -1,4 +1,4 @@
-# R processing scripts for QGIS
+# R processing scripts for QGIS - *Work in progress* 
 
 These scripts uses [lidR](https://cran.r-project.org/web/packages/lidR/index.html) and [lidRplugins](https://github.com/Jean-Romain/lidRplugins) packages to process LAS/LAZ files and catalogs.
 
