@@ -22,8 +22,8 @@ params = flightplanning::flight.parameters(height=AGL, flight.speed.kmh=24,
 
 # Load SpatialDataFrame polygon
 roi = ROI_shape |>
-  sf::st_transform(crs = "EPSG:2180") |>
-  sf::as_Spatial()
+  sf::st_as_sf()
+  
 if(nchar(Output_file_name) == 0) {
     Output_file_name <- "fly"
 }
@@ -31,7 +31,7 @@ if(nchar(Output_file_name) == 0) {
 output = paste0(Output_folder, "/", Output_file_name, ".csv")
 
 # Create the csv plan 
-flightplanning::litchi.plan(roi,
+flightplanning::litchi_sf(roi,
                             output,
                             params,
                             gimbal.pitch.angle = Gimbal_pitch,
