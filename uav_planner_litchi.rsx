@@ -52,9 +52,9 @@ flightplanning::litchi_sf(roi,
                             grid = Grid_Rotate_90_deg)
 
 
-# if(!file.exists(output)) {
-#   output <- paste0(Output_folder, "/", Output_file_name, "_entire.csv")
-# } 
+if(!file.exists(output)) {
+  output <- paste0(Output_folder, "/", Output_file_name, "_entire.csv")
+} 
 
 if(file.exists(output)) {
     Output_layer <- read.csv(output) |>
