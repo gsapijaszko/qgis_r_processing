@@ -9,16 +9,22 @@
 ##Gimbal_pitch=number -90
 ##Azimuth=number -1
 ##Grid_Rotate_90_deg=boolean FALSE
+##Distance_Interval_method=boolean FALSE
 ##Max_Flight_Time_min=number 18
 ##Max_Waypoints_Distance_m=number 400
 ##Output_folder=folder
 ##Output_file_name=string "fly"
 ##Output_layer=output vector
 
-# devtools::install_github("gsapijaszko/flightplanning-R", force = TRUE, dependencies=TRUE,  method = "wget", extra = "-c --progress=bar:force")
-# library(flightplanning)
+#list.of.packages <- c("devtools")
+#new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+#if(length(new.packages)) install.packages(new.packages)
+
+#list.of.packages <- c("flightplanning")
+#new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+#if(length(new.packages)) devtools::install_github("gsapijaszko/flightplanning-R", force = TRUE, dependencies=TRUE, method = "wget", extra = "-c --progress=bar:force")
 params = flightplanning::flight.parameters(height = AGL,
-#                                          gsd=GSD_cm,
+#                                           gsd=GSD_cm,
                                            focal.length35 = 24,
                                            flight.speed.kmh = Flight_speed_kmh,
                                            side.overlap = Side_Overlap, 
@@ -42,12 +48,13 @@ flightplanning::litchi_sf(roi,
                             flight.lines.angle = Azimuth,
                             max.waypoints.distance = Max_Waypoints_Distance_m,
                             max.flight.time = Max_Flight_Time_min,
-                            grid = Grid_Rotate_90_deg)
+                            grid = Grid_Rotate_90_deg,
+                            distancemethod=Distance_Interval_method)
 
 
-# if(!file.exists(output)) {
-#   output <- paste0(Output_folder, "/", Output_file_name, "_entire.csv")
-# } 
+if(!file.exists(output)) {
+  output <- paste0(Output_folder, "/", Output_file_name, "_entire.csv")
+} 
 
 if(file.exists(output)) {
     Output_layer <- read.csv(output) |>
