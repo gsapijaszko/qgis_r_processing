@@ -16,7 +16,6 @@
 ##Output_file_name=string "fly"
 ##Output_layer=output vector
 
-<<<<<<< HEAD
 #list.of.packages <- c("devtools")
 #new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 #if(length(new.packages)) install.packages(new.packages)
@@ -24,17 +23,9 @@
 #list.of.packages <- c("flightplanning")
 #new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 #if(length(new.packages)) devtools::install_github("gsapijaszko/flightplanning-R", force = TRUE, dependencies=TRUE, method = "wget", extra = "-c --progress=bar:force")
-=======
-# list.of.packages <- c("devtools")
-# new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-# if(length(new.packages)) install.packages(new.packages)
-
-# list.of.packages <- c("flightplanning")
-# new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-# if(length(new.packages)) devtools::install_github("gsapijaszko/flightplanning-R", force = TRUE, dependencies=TRUE, method = "wget", extra = "-c --progress=bar:force")
 
 # library(flightplanning)
->>>>>>> 01a652b1d430cee314321afa293e95309be68832
+
 params = flightplanning::flight.parameters(height = AGL,
 #                                           gsd=GSD_cm,
                                            focal.length35 = 24,
