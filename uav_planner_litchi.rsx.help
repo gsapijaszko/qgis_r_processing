@@ -3,11 +3,17 @@
    "ALG_DESC":"The script uses {flightplanning} package to generate flight plan for Litchi Flight Hub",
    "ROI_Polygon":"An ROI polygon in metric CRS",
    "AGL":"Average Ground Level of Flight",
+   "GSD_cm": "Ground Sampling Distance in cm. Not supported right now",
+   "Flight_speed_kmh": "Flight speed in km/h. Can be lowered little for better photo interval settings",
+   "Side_overlap": "Side overlap of photos. You should use at least 0.6 (60 percent) for correct SfM reconstruction. Same for Front overlap.",
    "Gimbal_pitch":"Gimbal pitch angle, defaults to -90",
    "Azimuth":"Angle of Flight lines. Default -1 calculates BBox longest line angle",
    "Corner_1_4":"Select starting point as an bounding box corner counter-clockwise 1,2,3,4 (default 1)",
    "Grid_Rotate_90_deg":"Rotate flight lines direction 90 deg",
-   "Output":"An output table (CSV)",
-   "Other settings":"Maximal waypoints distance defaults to 400m, do not change to >2km. Max flight time set to 18 min - longer flights will be cut to parts.",
+   "Distance_Interval_method": "Select between Time and Distance interval shutter trigger. Default (not active checkbox) is time",
+   "Max_Flight_Time_min": "Max flight time in minutes - longer flights will be split to parts.",
+   "Max_Waypoints_Distance_m":"Maximal waypoints distance, before leg will be split. Defaults to 400m, do not change to >2km. ",
+   "Output":"Output folder (you must set something), output file for saving CSV (default fly), and output table",
+
    "ALG_HELP_CREATOR":"Tomasz Nycz, tomasz(at)nycz.beskidy.pl"
 }
