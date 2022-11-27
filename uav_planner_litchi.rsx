@@ -1,13 +1,14 @@
 ##UAV=group
 ##Fly planing (Litchi)=name
 ##ROI_polygon=vector
-##AGL=number 119
+##AGL=number 90
 ##GSD_cm=number
 ##Flight_speed_kmh=number 24
 ##Side_Overlap=number 0.8
 ##Front_Overlap=number 0.8
 ##Gimbal_pitch=number -90
 ##Azimuth=number -1
+##Corner_1_4=number 1
 ##Grid_Rotate_90_deg=boolean FALSE
 ##Distance_Interval_method=boolean FALSE
 ##Max_Flight_Time_min=number 18
@@ -49,6 +50,7 @@ flightplanning::litchi_sf(roi,
                             params,
                             gimbal.pitch.angle = Gimbal_pitch,
                             flight.lines.angle = Azimuth,
+                            starting.point = Corner_1_4,
                             max.waypoints.distance = Max_Waypoints_Distance_m,
                             max.flight.time = Max_Flight_Time_min,
                             grid = Grid_Rotate_90_deg,
