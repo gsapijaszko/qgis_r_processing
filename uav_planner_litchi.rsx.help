@@ -1,0 +1,13 @@
+{
+   "ALG_CREATOR":"Tomasz Nycz, tomasz(at)nycz.beskidy.pl - Grzegorz Sapijaszko,grzegorz(at)sapijaszko.net",
+   "ALG_DESC":"The script uses {flightplanning} package to generate flight plan for Litchi Flight Hub",
+   "ROI_Polygon":"An ROI polygon in metric CRS",
+   "AGL":"Average Ground Level of Flight",
+   "Gimbal_pitch":"Gimbal pitch angle, defaults to -90",
+   "Azimuth":"Angle of Flight lines. Default -1 calculates BBox longest line angle",
+   "Corner_1_4":"Select starting point as an bounding box corner counter-clockwise 1,2,3,4 (default 1)",
+   "Grid_Rotate_90_deg":"Rotate flight lines direction 90 deg",
+   "Output":"An output table (CSV)",
+   "Other settings":"Maximal waypoints distance defaults to 400m, do not change to >2km. Max flight time set to 18 min - longer flights will be cut to parts.",
+   "ALG_HELP_CREATOR":"Tomasz Nycz, tomasz(at)nycz.beskidy.pl"
+}
